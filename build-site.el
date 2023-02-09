@@ -5,6 +5,10 @@
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
+
+(setq old-folder-publish "./public")
+(setq new-folder-publish "./docs")
+
 ;; Initialize the package system
 (package-initialize)
 (unless package-archive-contents
@@ -29,7 +33,7 @@
              :recursive t
              :base-directory "./content"
              :publishing-function 'org-html-publish-to-html
-             :publishing-directory "./public"
+             :publishing-directory new-folder-publish
              :with-author nil           ;; Don't include author name
              :with-creator t            ;; Include Emacs and Org versions in footer
              :with-toc t                ;; Include a table of contents
